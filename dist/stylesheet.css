@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 24px;
+    letter-spacing: -0.6px;
+    word-spacing: 3.8px;
+    font-variant: small-caps;
+    
+}
+
+#container {
+   height: auto;
+   width: auto;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: auto 1fr auto;
+   grid-template-areas: 
+     "header"
+     "main"
+     "footer";
+    background-image: url("/images/25670.jpg");
+    background-repeat: repeat;
+    background-position-y: -2px;
+ }
+
+header {
+     grid-area: header;
+     display: flex;
+     justify-content: space-between;
+ }
+
+ nav {
+     align-self: flex-end;
+ }
+
+nav ul {
+     width: 400px;
+     padding: 0px;
+     margin: 0;
+     display: flex;
+     justify-content: space-between;
+     text-align: center;
+
+ }
+
+nav ul li {
+     align-self: flex-end;
+     height: 100%;
+     width: 100%;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ #logo {
+     max-width: 100%;
+     height:auto;
+     padding: 5px;
+ }
+
+ #main {
+     grid-area: main;
+     padding: 0px 5px 10px 5px;
+     overflow: none;
+     display: grid;
+     grid-template-rows: auto 1fr;
+     grid-template-columns: 1fr auto;
+     background-color:rgba(96, 97, 50, 0.185);
+ }
+
+footer {  
+     grid-area: footer;
+     display: flex;
+     align-content: space-between;
+     background-color:rgba(96, 97, 50, 0.185);
+    }
+
+#main > .section {
+        grid-area: 2 / 3 / 2 / 3;
+        padding: 5px 15px 5px 5px;
+        overflow: auto;
+      }
+
+#foodvan {
+    max-width: 100%;
+    height: auto;
+    
+}
+      
+#main > .full {
+        grid-area: 1 / 1 / 1 / 4;
+        padding: 5px;
+      }
+
+#main > p {
+    padding: 5px;
+}
+
+.current {
+    background-color:rgba(96, 97, 50, 0.185);
+}
