@@ -1,5 +1,9 @@
 let pageLoad = () => {
     const container = document.getElementById("container")
+    const subContainer = document.createElement("div");
+    subContainer.setAttribute("id", "sub");
+
+    container.appendChild(subContainer);
 
     let header = document.createElement("header");
 
@@ -13,15 +17,16 @@ let pageLoad = () => {
       </ul>
     </nav>`;
 
-    container.appendChild(header);
+    subContainer.appendChild(header);
 
     
 
     let footer = document.createElement("footer");
     footer.setAttribute("id", "footer");
-    footer.innerText = "made by daniel needham";
-
-    container.appendChild(footer);
+    let footerText = document.createElement("p")
+    footerText.innerText = "made by daniel needham";
+    footer.appendChild(footerText)
+    subContainer.appendChild(footer);
 }
 
 export { pageLoad };

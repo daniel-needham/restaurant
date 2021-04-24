@@ -8,22 +8,29 @@ body {
     word-spacing: 3.8px;
     font-variant: small-caps;
     background-color:rgb(225,165,9);
-    min-height: 100%;
+    min-height: 99vh;
 }
 
 #container {
-   min-height: 100%;
-   width: auto;
+    min-height: 99vh;
+    background-image: url("/images/25670.jpg");
+    background-repeat: repeat;
+    background-position-y: -2px;
+    background-position-x: -750px;
+}
+#sub {
+   min-height: 100vh;
+   max-width: 960px;
+   margin:auto;
+   grid-area: content;
    display: grid;
    grid-template-columns: 1fr;
-   grid-template-rows: auto 1fr auto;
+   grid-template-rows: auto 1fr 50px;
    grid-template-areas: 
      "header"
      "main"
      "footer";
-    background-image: url("/images/25670.jpg");
-    background-repeat: repeat;
-    background-position-y: -2px;
+    margin-bottom: -50px;
  }
 
 header {
@@ -33,7 +40,12 @@ header {
  }
 
  nav {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
      align-self: flex-end;
+     cursor: pointer;
  }
 
 nav ul {
@@ -54,7 +66,11 @@ nav ul li {
      margin: 0;
      padding: 0;
  }
- 
+
+ nav ul li:hover{
+    opacity: 0.7;
+ }
+
  #logo {
      max-width: 100%;
      height:auto;
@@ -68,27 +84,38 @@ nav ul li {
      display: grid;
      grid-template-rows: auto 1fr;
      grid-template-columns: 1fr auto;
-     background-color:rgba(96, 97, 50, 0.185);
+     background-color:rgba(0, 0, 0, 0.11);
  }
 
 footer {  
      grid-area: footer;
-     padding: 50px 500px 5px 0px;
-     background-color:rgba(96, 97, 50, 0.185);
+     height: 50px;
+     padding-left: 5px;
+     background-color:rgba(0, 0, 0, 0.11);
     }
 
 #main > .section {
         grid-area: 2 / 3 / 2 / 3;
-        padding: 5px 15px 5px 5px;
+        margin: 10px;
+        padding: 5px;
         overflow: auto;
       }
 
-#main > .section > h1 {
-    text-overflow: ellipsis;
+#main > .full > h1 {
+    
+    font-size: 2px;
+}
+
+#left > h3 {
+    font-size: 20px;
+}
+
+#left > .menu {
+    font-size: 15px;
 }
 
 #foodvan {
-    max-width: 100%;
+    max-width: 570px;
     height: auto;
     
 }
@@ -96,12 +123,48 @@ footer {
 #main > .full {
         grid-area: 1 / 1 / 1 / 4;
         padding: 5px;
+        font-size: 1.85em;
       }
 
-#main > p {
-    padding: 5px;
+#left {
+    padding: 10px 0px 10px 10px;
+    font-variant: normal;
+    grid-area: 2/1/2/2;
 }
 
 .current {
-    background-color:rgba(96, 97, 50, 0.185);
+    background-color:rgba(0, 0, 0, 0.11);
 }
+
+#icons {
+    grid-row: 3 / 3;
+    grid-column: 1 / 2;
+    float:right;
+}
+
+.fa {
+    padding: 20px;
+    margin: 5px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    float: right;
+  }
+  
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+
